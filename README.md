@@ -13,6 +13,4 @@ Developers can define a custom `Certificate` resource in their application manif
 - **Secret Management** : Stores generated certificates in Kubernetes `Secret` objects for easy consumption by applications
 
  ## Demo
-```bash
-asciinema play --speed 2 demo.cast
-```
+[![asciinema](https://asciinema.org/a/wxRKhzbqbnBNmcplRJJ4R7fnK.svg)(https://asciinema.org/a/wxRKhzbqbnBNmcplRJJ4R7fnK?speed=2)
