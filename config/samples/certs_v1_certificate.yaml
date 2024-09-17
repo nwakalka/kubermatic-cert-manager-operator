@@ -4,6 +4,10 @@ metadata:
   labels:
     app.kubernetes.io/name: kubermatic-cert-manager-operator
     app.kubernetes.io/managed-by: kustomize
-  name: certificate-sample
+  name: my-certificate
+  namespace: default
 spec:
-  # TODO(user): Add fields here
+  dnsName: example.k8c.com
+  validity: 360d
+  secretRef:
+    name: my-certificate-secret

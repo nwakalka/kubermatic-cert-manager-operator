@@ -17,6 +17,7 @@ limitations under the License.
 package v1
 
 import (
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -28,14 +29,33 @@ type CertificateSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Certificate. Edit certificate_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// DnsName field specifies the DNSName for the Certificate.
+	DNSName string `json:"dnsName"`
+	// Validity field specifies the validity for the certificate.
+	Validity string `json:"validity"`
+	// SecretRef field references the secret where certificate will be stored.
+	SecretRef v1.SecretReference `json:"secretRef"`
 }
 
 // CertificateStatus defines the observed state of Certificate
 type CertificateStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
+	// Conditions field represents the observations of state
+	Conditions []metav1.Condition `json:"conditions,omitempty"`
+
+	// SerialNumber field represents the serial number of certificate
+	SerialNumber string `json:"serialNumber,omitempty"`
+
+	// NotBefore field represents the time when certificate is valid
+	NotBefore metav1.Time `json:"notBefore,omitempty"`
+
+	//NotAfter field represents the time when certificate is invalid
+	NotAfter metav1.Time `json:"notAfter,omitempty"`
+
+	//Issuer field represents the issuer of certificate
+	Issuer string `json:"issuer,omitempty"`
 }
 
 //+kubebuilder:object:root=true
