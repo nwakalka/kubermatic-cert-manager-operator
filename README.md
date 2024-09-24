@@ -16,8 +16,9 @@ Developers can define a custom `Certificate` resource in their application manif
 
 #### Demo shows working of Kubermatic TLS Certificate Manager Controller
 
-[![asciinema](https://asciinema.org/a/wxRKhzbqbnBNmcplRJJ4R7fnK.svg)](https://asciinema.org/a/wxRKhzbqbnBNmcplRJJ4R7fnK?speed=2)
+<!--[![asciinema](https://asciinema.org/a/wxRKhzbqbnBNmcplRJJ4R7fnK.svg)](https://asciinema.org/a/wxRKhzbqbnBNmcplRJJ4R7fnK?speed=2)-->
 
+![Demo](demo.gif)
 ### Getting started
 
 #### 1. Prerequisites
